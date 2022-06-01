@@ -1,0 +1,52 @@
+<?php
+  $db=new PDO("mysql:host=localhost; dbname=registration","root","");
+  $info=[];
+  
+  if($query = $db->query("SELECT*FROM product_page")){
+    $info=$query->fetchAll(PDO::FETCH_ASSOC);
+  }else{
+    print_r($db→errorInfo());
+  }
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>renFOOD</title>
+	<link rel="stylesheet" type="text/css" href="Style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div id="core">
+	 <div id="up">
+	 	<div id="logo"><p id="ff">ren</p><p id="fff">FOOD</p></div>
+	 	<div id="search"><p>&#128269 Search</p></div>
+	 	<div id="profile">
+	 		<div id="background_profile"></div>
+	 	</div>
+	 </div>
+     <div id="container_cart">
+     	<div id="container_cart_up">
+     		<div id="product"><img src="<?php echo $data['image'];?>"></div>
+     		<div id="product"><img src="img/hotdog.jpg"></div>
+     		<div id="product"><img src="img/hotdog.jpg"></div>
+     	</div>
+     	<div id="container_cart_down">
+     		<div id="product"><img src="img/hotdog.jpg"></div>
+     		<div id="product"><img src="img/hotdog.jpg"></div>
+     		<div id="product"><img src="img/hotdog.jpg"></div>
+     	</div>
+     </div>
+     <div id="cart_button1">Hotdog</div>
+     <div id="cart_button2">Pizza</div>
+     <div id="cart_button3"></div>
+     <div id="cart_button4"></div>
+     <div id="cart_button5"></div>
+     <div id="cart_button6"></div>
+
+
+</body>
+</html>
